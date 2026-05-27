@@ -1,0 +1,36 @@
+.carousel-custom {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.carousel-custom img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  background-size: 60%;
+}
+
+.btn-custom {
+  color: #d05c37;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-custom:hover {
+  opacity: 0.8;
+}
