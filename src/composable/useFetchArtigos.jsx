@@ -4,9 +4,15 @@ export const useFetchArtigos = ({ limit }) => {
   const [artigos, setArtigos] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/artigos?_limit=${limit}`)
+    fetch("/db.json")
       .then((res) => res.json())
-      .then((data) => setArtigos(data));
+      .then((data) => {
+        const artigosLimitados = limit
+          ? data.artigos.slice(0, limit)
+          : data.artigos;
+
+        setArtigos(artigosLimitados);
+      });
   }, [limit]);
 
   return { artigos };

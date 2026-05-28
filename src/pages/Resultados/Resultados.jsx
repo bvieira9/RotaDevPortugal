@@ -9,11 +9,10 @@ export const Resultados = () => {
   const [artigos, setArtigos] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/artigos")
+    fetch("/db.json")
       .then((response) => response.json())
-      .then((data) => setArtigos(data));
+      .then((data) => setArtigos(data.artigos));
   }, []);
-
   const resultados = artigos.filter(
     (item) =>
       item.titulo.toLowerCase().includes(search.toLowerCase()) ||

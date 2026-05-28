@@ -7,9 +7,13 @@ export const Artigo = () => {
   const [artigo, setArtigo] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/artigos/${id}`)
+    fetch("/db.json")
       .then((res) => res.json())
-      .then((data) => setArtigo(data));
+      .then((data) => {
+        const encontrado = data.artigos.find((item) => item.id === Number(id));
+
+        setArtigo(encontrado);
+      });
   }, [id]);
 
   if (!artigo) return <p>Carregando...</p>;

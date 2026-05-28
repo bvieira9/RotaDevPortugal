@@ -5,9 +5,9 @@ export const Artigos = () => {
   const [artigos, setArtigos] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/artigos")
+    fetch("/db.json")
       .then((res) => res.json())
-      .then((data) => setArtigos(data));
+      .then((data) => setArtigos(data.artigos));
   }, []);
 
   return (

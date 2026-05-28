@@ -61,7 +61,7 @@ export const Navbar = () => {
             <input
               className="form-control me-2"
               type="search"
-              placeholder="Buscar por tag"
+              placeholder="Buscar"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               aria-label="Search"
